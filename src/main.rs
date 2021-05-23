@@ -2,7 +2,7 @@ extern crate num_derive;
 
 mod emulator;
 mod mem;
-mod operand;
+mod opecode;
 mod port;
 mod reg;
 
@@ -13,5 +13,5 @@ fn main() {
 
     let emu = Emulator::new();
 
-    println!("{:?}", emu);
+    println!("{:?}", emu.fetch());
 }

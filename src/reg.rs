@@ -1,7 +1,7 @@
 #[derive(Debug, Default)]
 pub struct Reg {
-    a: u8,
-    b: u8,
-    flag: u8,
-    pc: u8,
+    pub a: u8,
+    pub b: u8,
+    pub flag: u8,
+    pub pc: u8,
 }
