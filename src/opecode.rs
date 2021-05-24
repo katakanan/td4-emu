@@ -1,6 +1,6 @@
 use num_derive::FromPrimitive;
 
-#[derive(Debug, FromPrimitive)]
+#[derive(Debug, FromPrimitive, PartialEq)]
 pub enum Opecode {
     ADD2A = 0b0000,
     ADD2B = 0b0101,

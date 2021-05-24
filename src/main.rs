@@ -11,7 +11,15 @@ use emulator::*;
 fn main() {
     println!("Hello, world!");
 
-    let emu = Emulator::new();
+    let mut emu = Emulator::new();
 
-    println!("{:?}", emu.fetch());
+    println!("{:?}", emu);
+
+    for _ in 0..10 {
+        let (opecode, operand) = emu.fetch_decode();
+        println!("{:?} {:?}", opecode, operand);
+        let next_pc = emu.exec_mut(&opecode, operand);
+        emu.reg.pc = next_pc;
+        println!("{:?}", emu);
+    }
 }
