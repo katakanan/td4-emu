@@ -9,3 +9,11 @@ edition = "2018"
 [dependencies]
 num-derive = "0.3.3"
 num-traits = "0.2.14"
+
+[lib]
+name = "td4_emu"
+path = "src/lib.rs"
+
+[[bin]]
+name = "td4-bin"
+path = "src/main.rs"

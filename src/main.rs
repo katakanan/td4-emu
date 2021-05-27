@@ -11,7 +11,7 @@ use emulator::*;
 fn main() {
     println!("Hello, world!");
 
-    let mut emu = Emulator::new();
+    let mut emu = Emulator::new("prg.bin");
 
     println!("{:?}", emu);
 

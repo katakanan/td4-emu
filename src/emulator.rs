@@ -11,8 +11,8 @@ pub struct Emulator {
 }
 
 impl Emulator {
-    pub fn new() -> Emulator {
-        let prg = Mem::load_new("prg.bin");
+    pub fn new(path: &str) -> Emulator {
+        let prg = Mem::load_new(path);
 
         let reg = Reg::default();
         let port = Port::default();
