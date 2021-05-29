@@ -4,9 +4,17 @@ use std::path::Path;
 
 use std::u8;
 
-#[derive(Debug, Default)]
+#[derive(Debug)]
 pub struct Mem {
     pub mem: Vec<u8>,
+}
+
+impl Default for Mem {
+    fn default() -> Self {
+        Mem {
+            mem: vec![0b11110000],
+        }
+    }
 }
 
 impl Mem {

@@ -3,7 +3,7 @@ use crate::opecode::*;
 use crate::port::*;
 use crate::reg::*;
 
-#[derive(Debug)]
+#[derive(Debug, Default)]
 pub struct Emulator {
     pub prg: Mem,
     pub reg: Reg,
