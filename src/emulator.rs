@@ -87,6 +87,6 @@ impl Emulator {
             }
         }
 
-        self.reg.pc + 1
+        (self.reg.pc + 1) & 0x0f
     }
 }

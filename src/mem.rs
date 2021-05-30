@@ -11,9 +11,7 @@ pub struct Mem {
 
 impl Default for Mem {
     fn default() -> Self {
-        Mem {
-            mem: vec![0b11110000],
-        }
+        Mem { mem: vec![0; 16] }
     }
 }
 
@@ -26,10 +24,10 @@ impl Mem {
 
     fn load(&mut self, path: &str) {
         let lines = read_lines(path).unwrap_or_else(|_| panic!());
-        for line in lines {
+        for (addr, line) in lines.enumerate() {
             if let Ok(bin_str) = line {
                 let bin = u8::from_str_radix(&bin_str, 2).unwrap_or_else(|_| 0xAA);
-                self.mem.push(bin);
+                self.mem[addr] = bin;
             }
         }
     }
