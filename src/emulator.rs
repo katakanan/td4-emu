@@ -40,7 +40,7 @@ impl Emulator {
             }
             Opecode::ADD2B => {
                 let tmp = self.reg.b + operand;
-                self.reg.flag = (0x10 & tmp) != 1;
+                self.reg.flag = (0x10 & tmp) != 0;
                 self.reg.a = 0x0F & tmp;
             }
             Opecode::MOV2A => {
